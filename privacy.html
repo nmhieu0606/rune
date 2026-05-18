@@ -79,31 +79,43 @@
         <h1>RUNE PRIVACY POLICY</h1>
         <div class="subtitle">Chính Sách Bảo Mật Chính Thức của Ứng Dụng Rune</div>
 
-        <p>Chào mừng bạn đến với <strong>Rune</strong>. Chúng tôi là nhà cung cấp ứng dụng trình phát phương tiện bên thứ ba chuyên nghiệp. Rune tôn trọng sâu sắc và cam kết bảo vệ tuyệt đối thông tin riêng tư của người dùng khi sử dụng dịch vụ của chúng tôi.</p>
+        <p>Chào mừng bạn đến với <strong>Rune</strong>. Chúng tôi cam kết bảo vệ tuyệt đối thông tin riêng tư và dữ liệu cá nhân của người dùng. Dưới đây là chính sách bảo mật mô tả chi tiết cách Rune xử lý dữ liệu để phù hợp hoàn hảo với các tính năng thực tế của ứng dụng và tuân thủ các quy định của Google & YouTube API.</p>
         
-        <h2>1. Thông tin thu thập và Xử lý dữ liệu</h2>
-        <p>Rune là một trình phát phương tiện độc lập. Để cá nhân hóa danh sách phát, chúng tôi cho phép kết nối tài khoản Google YouTube của bạn qua giao thức bảo mật Google OAuth:</p>
+        <h2>1. Không Thu Thập Dữ Liệu Trên Máy Chủ (Zero-Server Policy)</h2>
+        <p>Để đảm bảo an toàn thông tin tối đa cho người dùng:</p>
         <ul>
-            <li><strong>Dữ liệu cá nhân cơ bản:</strong> Chúng tôi chỉ đọc tên hiển thị, ảnh đại diện và email để phân biệt các cấu hình tài khoản cục bộ trên thiết bị của bạn.</li>
-            <li><strong>Dữ liệu danh sách phát:</strong> Danh sách nhạc đã thích (Liked), Lịch sử xem (Watch History), và Playlist cá nhân của bạn được nạp trực tiếp qua YouTube API để hiển thị trên trình phát.</li>
+            <li>Rune **hoàn toàn không sở hữu hay vận hành bất kỳ máy chủ bên thứ ba nào** để lưu trữ thông tin tài khoản của bạn.</li>
+            <li>Toàn bộ thông tin tài khoản Google OAuth, lịch sử nghe nhạc, danh sách phát nhạc đã tạo đều được **mã hóa và lưu trữ cục bộ 100% trên bộ nhớ an toàn (Secure Storage) thiết bị điện thoại của chính bạn**.</li>
+            <li>Chúng tôi không bao giờ chia sẻ, bán hay chuyển giao thông tin cá nhân của bạn cho bất kỳ đối tác bên thứ ba nào.</li>
         </ul>
 
-        <h2>2. Nguyên tắc "Không lưu trữ trên máy chủ" (Zero-Server Storage)</h2>
-        <p>Tương tự như các tiêu chuẩn bảo mật hàng đầu của <em>Pure Tuber</em>:</p>
+        <h2>2. Dữ Liệu Kết Nối Qua YouTube API</h2>
+        <p>Để đồng bộ hóa trải nghiệm nhạc của bạn, Rune cho phép kết nối an toàn với tài khoản Google qua giao thức Google OAuth:</p>
         <ul>
-            <li>Rune **hoàn toàn không sở hữu hay vận hành bất kỳ máy chủ cơ sở dữ liệu nào** để thu thập thông tin tài khoản của bạn.</li>
-            <li>Tất cả tokens xác thực (Access Token, Refresh Token) và dữ liệu danh sách phát nhạc đều được **mã hóa và lưu trữ cục bộ 100% trên bộ nhớ an toàn (Secure Storage) thiết bị điện thoại của chính bạn**.</li>
-            <li>Chúng tôi không chia sẻ, bán hay chuyển giao thông tin của bạn cho bất kỳ đối tác thương mại nào.</li>
+            <li><strong>Thông tin tài khoản cơ bản:</strong> Ứng dụng đọc tên hiển thị, email và ảnh đại diện của bạn nhằm hiển thị hồ sơ cá nhân hóa cục bộ trên giao diện của app.</li>
+            <li><strong>Danh sách phát & Lịch sử:</strong> Rune gọi Dịch vụ YouTube API để hiển thị danh sách phát cá nhân (Playlists), các video bạn đã thích (Liked Videos) và Lịch sử xem (Watch History) trên giao diện trình phát. Dữ liệu này chỉ được tải và xử lý tức thì dưới dạng bộ nhớ tạm để phục vụ việc phát nhạc.</li>
         </ul>
 
-        <h2>3. Sử dụng Dịch vụ Bên thứ ba</h2>
-        <p>Rune sử dụng các thư viện phần mềm an toàn từ các nhà cung cấp uy tín (Google Play Services, Firebase API) để tối ưu hóa hiệu năng phát nhạc và xử lý sự cố. Các dịch vụ này có thể thu thập một số thông tin kỹ thuật không định danh (Device ID, Log Crash) nhằm nâng cấp trải nghiệm người dùng.</p>
+        <h2>3. Quản Lý Tệp Tin Âm Thanh Cục Bộ (Local Media Files)</h2>
+        <p>Ứng dụng Rune cung cấp tính năng **Nhập và phát nhạc từ tệp tin âm thanh cá nhân có sẵn trên thiết bị của người dùng (Local Media Library Import)**:</p>
+        <ul>
+            <li>Để thực hiện tính năng này, Rune sẽ yêu cầu quyền truy cập thư viện tệp tin phương tiện (Storage/Media Permission) trên điện thoại của bạn.</li>
+            <li>Quyền này chỉ được dùng để quét, hiển thị danh mục và phát trực tiếp các tệp tin âm thanh cá nhân mà bạn tự chủ động chọn nhập vào ứng dụng.</li>
+            <li>Chúng tôi **không tải lên hay lưu trữ bất kỳ tệp tin cá nhân nào của bạn** lên bất kỳ hệ thống đám mây nào.</li>
+        </ul>
 
-        <h2>4. Thu hồi Quyền hạn</h2>
-        <p>Bạn giữ toàn quyền kiểm soát tài khoản của mình. Bạn có thể đăng xuất khỏi Rune hoặc thu hồi quyền truy cập API bất kỳ lúc nào tại: <a href="https://myaccount.google.com/permissions" target="_blank">Google Security Portal</a>.</p>
+        <h2>4. Phân Tích Kỹ Thuật Và Đề Xuất Cục Bộ (Local Customization)</h2>
+        <p>Ứng dụng Rune có thể lưu trữ một số tùy chọn cá nhân hóa của bạn (ví dụ như bài hát gần đây, tùy chọn giao diện) hoàn toàn cục bộ trên thiết bị của bạn bằng cơ sở dữ liệu nội bộ (Hive & SharedPreferences). Việc này nhằm mục đích ghi nhớ tiến trình phát nhạc và cung cấp các đề xuất nhạc nhanh chóng, tiết kiệm tối đa pin và dung lượng mạng di động của thiết bị.</p>
 
-        <h2>5. Liên hệ hỗ trợ</h2>
-        <p>Nếu bạn có bất kỳ câu hỏi nào về chính sách bảo mật này, vui lòng liên hệ với nhà phát triển qua Email: <strong>nmhieu0606@gmail.com</strong>.</p>
+        <h2>5. Quyền Quản Lý Và Xóa Dữ Liệu</h2>
+        <p>Người dùng giữ toàn quyền kiểm soát tuyệt đối dữ liệu của mình:</p>
+        <ul>
+            <li>Bạn có thể xóa toàn bộ dữ liệu lịch sử và danh sách phát nhạc đã lưu cục bộ bằng nút **Xóa bộ nhớ đệm** trong mục cài đặt của ứng dụng.</li>
+            <li>Bạn có thể đăng xuất tài khoản Google của mình khỏi Rune bất kỳ lúc nào để hủy bỏ hoàn toàn các tokens liên kết trên thiết bị, hoặc thu hồi quyền truy cập API của ứng dụng trực tiếp tại trang bảo mật tài khoản Google: <a href="https://myaccount.google.com/permissions" target="_blank">Google Security Permissions</a>.</li>
+        </ul>
+
+        <h2>6. Liên Hệ Hỗ Trợ</h2>
+        <p>Nếu bạn có bất kỳ câu hỏi hoặc góp ý nào về Chính sách Bảo mật này, vui lòng liên hệ với nhà phát triển qua Email hỗ trợ chính thức: <strong>nmhieu0606@gmail.com</strong>.</p>
 
         <div class="footer">
             &copy; 2026 Rune App. Inspired by premium player architectures. All rights reserved.
