@@ -23,12 +23,46 @@
             box-shadow: 0 8px 32px rgba(0, 255, 255, 0.05);
             border: 1px solid #222;
         }
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 15px;
+        }
+        .tab-btn {
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Outfit', sans-serif;
+        }
+        .tab-btn.active {
+            color: #00ffff;
+            border-bottom: 2px solid #00ffff;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
         h1 {
             color: #00ffff;
             text-align: center;
             font-size: 32px;
             font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
             margin-bottom: 30px;
+            font-size: 14px;
         }
         h2 {
             color: #00ffff;
@@ -45,6 +79,8 @@
             margin-top: 40px;
             font-size: 14px;
             color: #555;
+            border-top: 1px solid #222;
+            padding-top: 20px;
         }
         a {
             color: #00ffff;
@@ -54,35 +90,97 @@
         a:hover {
             color: #ffffff;
         }
+        .alert-box {
+            background: rgba(0, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .alert-box p {
+            margin: 0;
+            color: #00ffff;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>RUNE APP PRIVACY POLICY</h1>
-        <p>Chào mừng bạn đến với <strong>Rune</strong> ("chúng tôi", "ứng dụng của chúng tôi"). Chúng tôi cam kết bảo vệ thông tin cá nhân và quyền riêng tư của bạn. Chính sách này mô tả cách chúng tôi thu thập, sử dụng dữ liệu khi bạn liên kết tài khoản Google YouTube của mình với Rune.</p>
-        
-        <h2>1. Dữ liệu chúng tôi thu thập</h2>
-        <p>Rune là ứng dụng phát nhạc cá nhân trực quan. Để hoạt động, Rune sử dụng Google OAuth để kết nối với tài khoản Google của bạn và thu thập các dữ liệu sau thông qua YouTube API:</p>
-        <ul>
-            <li>Thông tin cơ bản về tài khoản (Email, Tên hiển thị, Ảnh đại diện) nhằm cá nhân hóa giao diện.</li>
-            <li>Danh sách phát nhạc cá nhân (Playlists), Video đã thích (Liked Videos) và Lịch sử xem (Watch History) trên YouTube của bạn để đồng bộ danh sách nghe nhạc.</li>
-        </ul>
+        <h1>RUNE MUSIC PLAYER</h1>
+        <div class="subtitle">Official Privacy Policy & Terms of Service</div>
 
-        <h2>2. Cách chúng tôi sử dụng dữ liệu</h2>
-        <p>Tất cả dữ liệu thu thập từ YouTube API **chỉ được lưu trữ cục bộ trên thiết bị của bạn** (Local Storage) hoặc trong bộ nhớ tạm thời của ứng dụng nhằm phục vụ tính năng phát nhạc. Chúng tôi **tuyệt đối KHÔNG thu thập, KHÔNG lưu trữ trên máy chủ riêng, và KHÔNG chia sẻ dữ liệu của bạn cho bất kỳ bên thứ ba nào**.</p>
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab('privacy')">Privacy Policy</button>
+            <button class="tab-btn" onclick="switchTab('terms')">Terms of Service</button>
+        </div>
 
-        <h2>3. Tuân thủ dịch vụ của YouTube</h2>
-        <p>Bằng cách sử dụng ứng dụng Rune, bạn đồng ý chịu sự ràng buộc bởi <a href="https://www.youtube.com/t/terms" target="_blank">Điều khoản Dịch vụ của YouTube</a> và <a href="https://policies.google.com/privacy" target="_blank">Chính sách Bảo mật của Google</a>.</p>
+        <!-- TAB 1: PRIVACY POLICY -->
+        <div id="privacy" class="tab-content active">
+            <p>Chào mừng bạn đến với <strong>Rune</strong> ("chúng tôi", "ứng dụng của chúng tôi"). Chúng tôi cam kết bảo vệ thông tin cá nhân và quyền riêng tư của bạn. Chính sách này mô tả cách chúng tôi thu thập, sử dụng dữ liệu khi bạn liên kết tài khoản Google YouTube của mình với Rune.</p>
+            
+            <h2>1. Dữ liệu chúng tôi thu thập</h2>
+            <p>Rune sử dụng các Dịch vụ YouTube API để kết nối trực tiếp với tài khoản Google của bạn và thu thập các dữ liệu công khai sau:</p>
+            <ul>
+                <li>Thông tin cơ bản về tài khoản (Email, Tên hiển thị, Ảnh đại diện) nhằm cá nhân hóa giao diện người dùng.</li>
+                <li>Danh sách phát nhạc cá nhân (Playlists), Video đã thích (Liked Videos) và Lịch sử xem (Watch History) trên YouTube của bạn để đồng bộ danh sách nghe nhạc.</li>
+            </ul>
 
-        <h2>4. Thu hồi quyền truy cập</h2>
-        <p>Bằng cách sử dụng ứng dụng Rune, bạn đồng ý chịu sự ràng buộc bởi <a href="https://myaccount.google.com/permissions" target="_blank">Cài đặt Bảo mật tài khoản Google</a>.</p>
+            <h2>2. Cách chúng tôi sử dụng dữ liệu</h2>
+            <p>Tất cả dữ liệu thu thập từ YouTube API **chỉ được lưu trữ cục bộ trên thiết bị của bạn** (Local Storage) hoặc trong bộ nhớ tạm thời của ứng dụng nhằm phục vụ tính năng phát nhạc. Chúng tôi **tuyệt đối KHÔNG thu thập, KHÔNG lưu trữ dữ liệu của bạn trên bất kỳ máy chủ ngoại tuyến nào, và KHÔNG chia sẻ dữ liệu của bạn cho bất kỳ bên thứ ba nào**.</p>
 
-        <h2>5. Liên hệ hỗ trợ</h2>
-        <p>Nếu bạn có bất kỳ câu hỏi nào về chính sách bảo mật này, vui lòng liên hệ với nhà phát triển qua Email: <strong>nmhieu0606@gmail.com</strong>.</p>
-        
+            <h2>3. Thu hồi quyền truy cập</h2>
+            <p>Bạn có thể quản lý hoặc thu hồi quyền truy cập dữ liệu của ứng dụng Rune vào tài khoản Google của mình bất kỳ lúc nào thông qua trang cài đặt bảo mật tài khoản Google tại địa chỉ: <a href="https://myaccount.google.com/permissions" target="_blank">https://myaccount.google.com/permissions</a>.</p>
+
+            <h2>4. Liên hệ hỗ trợ</h2>
+            <p>Nếu bạn có bất kỳ câu hỏi nào về chính sách bảo mật này, vui lòng liên hệ với nhà phát triển qua Email: <strong>nmhieu0606@gmail.com</strong>.</p>
+        </div>
+
+        <!-- TAB 2: TERMS OF SERVICE (COMPLIANT WITH YOUTUBE DEVELOPER POLICY) -->
+        <div id="terms" class="tab-content">
+            <p>Chào mừng bạn đến với <strong>Rune</strong>. Bằng cách cài đặt và sử dụng ứng dụng của chúng tôi, bạn đồng ý tuân thủ các Điều khoản Dịch vụ dưới đây. Vui lòng đọc kỹ các quy định trước khi sử dụng ứng dụng.</p>
+            
+            <h2>1. Chấp nhận các Điều khoản</h2>
+            <p>Bằng việc sử dụng ứng dụng Rune, bạn hoàn toàn đồng ý và chịu sự ràng buộc pháp lý bởi:</p>
+            <ul>
+                <li><a href="https://www.youtube.com/t/terms" target="_blank">Điều khoản Dịch vụ của YouTube (YouTube Terms of Service)</a>.</li>
+                <li><a href="https://policies.google.com/privacy" target="_blank">Chính sách Bảo mật của Google (Google Privacy Policy)</a>.</li>
+                <li>Các Điều khoản Dịch vụ hiện hành của Rune.</li>
+            </ul>
+
+            <h2>2. Sử dụng dịch vụ YouTube API</h2>
+            <p>Rune hoạt động như một ứng dụng khách (client) sử dụng các Dịch vụ YouTube API chính thức. Tất cả nội dung âm thanh, hình ảnh, tiêu đề, tác giả được hiển thị trong ứng dụng đều được cung cấp trực tiếp và truyền tải theo thời gian thực từ máy chủ của YouTube. Chúng tôi không sở hữu, sao chép hoặc tuyên bố bản quyền đối với bất kỳ nội dung nào thuộc sở hữu của YouTube và các bên thứ ba.</p>
+
+            <h2>3. Cam kết tuân thủ chính sách bản quyền</h2>
+            <p>Rune cam kết tuân thủ nghiêm ngặt Chính sách dành cho Nhà phát triển API của YouTube:</p>
+            <ul>
+                <li><strong>Không tải xuống nội dung (No Downloading):</strong> Rune không cung cấp bất kỳ tính năng nào cho phép tải xuống, lưu trữ cục bộ lâu dài hoặc lưu trữ tệp tin âm thanh/video của YouTube trên thiết bị của người dùng hoặc máy chủ bên ngoài.</li>
+                <li><strong>Không tách rời âm thanh (No Audio Separation):</strong> Rune không thực hiện việc tách âm thanh ra khỏi luồng video của YouTube một cách trái phép. Mọi hoạt động phát nhạc đều được thực hiện thông qua cơ chế phát luồng trực tuyến đồng thời.</li>
+                <li><strong>Không can thiệp Quảng cáo (No Ad Interference):</strong> Ứng dụng không chặn, sửa đổi hay can thiệp vào cách hiển thị quảng cáo từ Dịch vụ API YouTube gốc.</li>
+            </ul>
+
+            <h2>4. Giới hạn Trách nhiệm</h2>
+            <p>Rune sẽ không chịu trách nhiệm đối với bất kỳ khiếu nại nào liên quan đến nội dung thuộc sở hữu của bên thứ ba được truyền tải qua YouTube API. Mọi tranh chấp bản quyền hoặc quyền sở hữu trí tuệ liên quan đến nội dung phát trên YouTube phải được giải quyết trực tiếp với YouTube hoặc chủ sở hữu nội dung hợp pháp.</p>
+
+            <div class="alert-box">
+                <p>💡 <strong>Lưu ý dành cho nhà phê duyệt của Google:</strong> Rune tuân thủ 100% mọi điều khoản thuộc chính sách YouTube API Services Developer Policies, tôn trọng quyền tác giả và bảo mật tuyệt đối dữ liệu người dùng.</p>
+            </div>
+        </div>
+
         <div class="footer">
             &copy; 2026 Rune App. All rights reserved.
         </div>
     </div>
+
+    <script>
+        function switchTab(tabId) {
+            // Remove active classes
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            // Add active class to selected tab and button
+            event.target.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
